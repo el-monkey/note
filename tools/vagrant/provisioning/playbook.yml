@@ -1,0 +1,26 @@
+---
+# file: playbook.yml
+- hosts: all
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: install epel
+      yum:  name=epel-release state=latest
+
+    - name: install ncurses-devel
+      yum:  name=ncurses-devel state=latest
+
+    - name: install openssl-devel
+      yum:  name=openssl-devel state=latest
+
+    - name: install autoconf
+      yum:  name=autoconf state=latest
+
+    - name: install wxBase
+      yum:  name=wxBase state=latest
+
+    - name: download an install erlang solutions rpm
+      yum:
+        name:  http://packages.erlang-solutions.com/site/esl/esl-erlang/FLAVOUR_1_general/esl-erlang_20.0-1~centos~7_amd64.rpm  
+        state: present
+
