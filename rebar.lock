@@ -1,0 +1,4 @@
+[{<<"uuid">>,
+  {git,"https://github.com/avtobiff/erlang-uuid.git",
+       {ref,"1fdc1b367902da71b774a34ae15690811ac17b99"}},
+  0}].

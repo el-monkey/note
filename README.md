@@ -1,2 +1,9 @@
-# notes
-A notebook application written in Erlang
+notes
+=====
+
+An OTP application
+
+Build
+-----
+
+    $ rebar3 compile

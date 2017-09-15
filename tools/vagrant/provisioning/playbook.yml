@@ -4,6 +4,9 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: install git
+      yum:  name=git state=latest
+
     - name: install epel
       yum:  name=epel-release state=latest
 

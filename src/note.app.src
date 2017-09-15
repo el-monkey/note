@@ -1,0 +1,16 @@
+{application, note,
+ [{description, "An OTP application for storing notes"},
+  {vsn, "0.1.0"},
+  {registered, [note]},
+  {mod, { note_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    mnesia
+   ]},
+  {env,[]},
+  {modules, [note, note_app, note_sup, note_server, note_store]},
+  {maintainers, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
