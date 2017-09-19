@@ -5,6 +5,7 @@
 -export([fetch_notes/0]).
 -export([save_note/1]).
 -export([delete_note/1]).
+-export([uuid/1, created_date/1, modified_date/1, text/1]).
 
 -include("note.hrl").
 
@@ -53,4 +54,25 @@ delete_note(Note) when erlang:is_record(Note, note) ->
         ok           -> ok;
         {error, Msg} -> {error, Msg}
     end. 
+
+%% @doc accessor function for retrieving the uuid
+%% @end
+uuid(#note{uuid = Uuid} = Note) when erlang:is_record(Note, note) andalso Uuid =/= undefined -> Uuid; 
+uuid(_) -> undefined.
+
+%% @doc accessor function for retrieving the created_date
+%% @end
+created_date(#note{created_date = CreatedDate} = Note) when erlang:is_record(Note, note) andalso CreatedDate =/= undefined -> CreatedDate;
+created_date(_) -> undefined.
+
+%% @doc accessor function for retrieving the modified_date
+%% @end
+modified_date(#note{modified_date = ModifiedDate} = Note) when erlang:is_record(Note, note) andalso ModifiedDate =/= undefined -> ModifiedDate;
+modified_date(_) -> undefined.
+
+%% @doc accessor function for retrieving the text 
+%% @end
+text(#note{text = Text} = Note) when erlang:is_record(Note, note) andalso Text =/= undefined -> Text;
+text(_) -> undefined.
+        
 
