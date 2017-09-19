@@ -1,6 +1,6 @@
 {application, note,
  [{description, "An OTP application for storing notes"},
-  {vsn, "0.1.0"},
+  {vsn, "0.0.1"},
   {registered, [note]},
   {mod, { note_app, []}},
   {applications,
